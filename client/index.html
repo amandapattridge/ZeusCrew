@@ -38,7 +38,7 @@
       </div>
       <div id="right">
         <div id="info">
-          <h3 class="infoHeader"><i class="fa fa-caret-right" aria-hidden="true"></i>Your Stops</h3>
+          <h3 class="infoHeader"><i class="fa fa-caret-right fa-rotate-90" aria-hidden="true"></i>Your Stops</h3>
           <!-- Need to add actual object name for ng-repeat -->
           <div class="info stop-info" ng-repeat="place in places">
             <p class="stop-name">{{place.name}}</p>
@@ -58,7 +58,7 @@
   <div id="invisible"></div>
   <script>
     $(".infoHeader").on('click', function(e){
-      $(".info").toggle();
+      $(this).parent().find(".info").toggle();
       $(this).parent().find('i').toggleClass('fa-rotate-90');
     })
   </script>
