@@ -5,15 +5,15 @@ var findJourney = Q.nbind(Journey.findOne, Journey);
 var createJourney = Q.nbind(Journey.create, Journey);
 
 module.exports = {
-  saveJourney: function (req, res, next) { 
+  saveJourney: function (req, res, next) {
     var start = req.body.start;
     var end = req.body.end;
     var waypoints = [];
 
     for (var i = 0; i < req.body.waypoints.length; i++) {
-      waypoints.push(req.body.waypoints[i].location);
+      waypoints.push([req.body.waypoints[i].name, req.body.waypoints[i].location]);
     }
-    
+
     findJourney({wayPoints: waypoints})
       .then(function (waypoint) {
         if (!waypoint) {

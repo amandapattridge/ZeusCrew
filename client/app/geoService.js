@@ -137,7 +137,7 @@ angular.module('gservice', [])
         //query the google places service each waypoint
         var placesService = new google.maps.places.PlacesService(document.getElementById('invisible'));
 
-        //generagtes nearby places synchronously, so order is preserved
+        //generagtes nearby places ahronously, so order is preserved
         var getPlacesToStop = function (i, placeRequests) {
           if (i === placeRequests.length) {
             deferred.resolve(placesToStop);
